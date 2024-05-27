@@ -1,0 +1,7 @@
+h1,
+h2,
+p {
+  color: brown;
+  font-style: italic;
+}
+/* Nếu h1, h2, p có cùng chung các thuộc tính giống nhau ta có thể gộp lại như trên */

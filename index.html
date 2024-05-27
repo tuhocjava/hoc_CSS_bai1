@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 25: CSS_Giới thiệu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="./">Home</a> <br>
+    <a href="./contact.html">Contact me</a><br>
+    <a href="./about.html">About website</a>
+    <h1 style="background-color: brown; color: white">Học về CSS</h1>
+    <p style="color: blueviolet">
+      CSS(Cascading style sheets) là ngôn ngữ định hình phong cách cho website.
+    </p>
+
+    <h2>Các vị trí đặt CSS</h2>
+    <ol type="1">
+      <li>
+        Inline(Nội tuyến) là cách viết CSS ngay bên trong thẻ mở của một phần tử
+        html
+      </li>
+      <p>
+        Với cách đặt này thì CSS chỉ có tác dụng ngay trên thẻ đó.<br />
+
+        Ví dụ: Trong đoạn mã dưới đây
+      </p>
+      <pre>
+    <code class="language-html">
+        &lt;h1 style=&quot;background-color: brown; color: white&quot;&gt;Học về CSS&lt;/h1&gt;
+        &lt;p style=&quot;color: blueviolet&quot;&gt;
+    </code>
+</pre>
+      <p style="color: rgb(119, 0, 255)">
+        Ở đây style: là attribute của html, phần trong nháy "" là ngôn ngữ CSS,
+        <i>background-color</i> và <i>color</i> là các property của CSS, phần
+        sau dấu : là giá trị.
+      </p>
+      <p>
+        <strong
+          >Nhược điểm của cách đặt này là nếu như trong trường hợp có nhiều đoạn
+          văn bản có cùng property và giá trị giống nhau thì ta phải thêm thủ
+          công vào từng đoạn văn bản, việc này rất tốn thời gian.</strong
+        >
+      </p>
+      <li>
+        Internal(CSS nội bộ) là cách đặt khối lệnh CSS vào trong cặp thẻ
+        &lt;style&gt;&lt/style&gt; (bên trong thẻ head)
+        <pre>
+    <code class="language-html">
+  &lt;head&gt;
+     ...
+     &lt;style&gt;
+             h1{
+                   color: blue;
+                   font style: italic;
+               }
+     &lt;/style&gt;
+  &lt;/head&gt;
+    </code>
+  </pre>
+        <h2>Ưu điểm và nhược điểm của cách đặt này</h2>
+        <ul style="list-style-type: square">
+          <li>
+            Ưu điểm: code CSS tách biệt với phần tử html, có thể sử dụng toàn
+            trang
+          </li>
+          <li>
+            Nhược điểm: vẫn khó quản lý khi gặp dự án lớn, nhiều mã CSS sẽ làm
+            cho tệp HTML trở nên cồng kềnh.
+          </li>
+        </ul>
+      </li>
+      <br />
+      <li>
+        External(CSS bên ngoài): trong trường hợp muốn áp dụng CSS cho toàn bộ
+        file HTML trong website, tránh copy nhiều lần CSS vào các file đó
+        <ul style="list-style-type: circle">
+          <li>
+            Tạo file css quản lí riêng trong dự án, ví dụ: style.css<br />
+            <code class="language-html"> # style.css </code>
+            <pre>
+  <code class="language-html">
+    h2 {
+      color: brown;
+      font-style: italic;
+    }
+  </code>
+</pre>
+          </li>
+          <li>
+            Cần khai báo tệp trong phần tử head của tệp html để link đến tệp css
+            <pre>
+  <code class="language-html">
+    &lt;head&gt;
+      ...
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;/head&gt;
+  </code>
+</pre>
+            Ở đây rel="stylesheet" sẽ thông báo cho trình duyệt tải tệp css đã
+            chỉ định và áp dụng các định dạng kiểu của nó cho cả website.
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
